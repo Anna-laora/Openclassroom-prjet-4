@@ -7,8 +7,8 @@ console.log(queryString_url_id);
 const urlSearchParams = new URLSearchParams(queryString_url_id);
 console.log(urlSearchParams);
 
-const id = urlSearchParams.get("id");
-console.log(id);
+const leId = urlSearchParams.get("id");
+console.log(leId);
 
 //affichage du produit (de l'objet) qui a été sélectionné par l'id
 
@@ -19,8 +19,8 @@ let reponse = fetch(`http://localhost:3000/api/products/${id}`);
 const positionElements = document.querySelector(".item__img");
 
 //structure HTMl pour l'affichage du produit sélectionné
-const structureProduits = ` <div class=" ${id}>
-<img src="${id.imageUrl}" alt="${id.altTxt}"> </div>`;
+const structureProduits = ` <div class="${reponse._id}">
+<img src="${reponse.imageUrl}" alt="${reponse.altTxt}"> </div>`;
 
 //injecttion HTML dans la page produit
 positionElements.innerHTML = structureProduits;
