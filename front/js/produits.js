@@ -3,24 +3,23 @@ const queryString_url_id = window.location.search;
 console.log(queryString_url_id);
 
 // méthode pour extrair_ l'id
-
 const urlSearchParams = new URLSearchParams(queryString_url_id);
 console.log(urlSearchParams);
 
-const leId = urlSearchParams.get("id");
-console.log(leId);
+const id = urlSearchParams.get("id");
+console.log(id);
 
 //affichage du produit (de l'objet) qui a été sélectionné par l'id
-
 //---Méthode 2 : avec fetch et en mettent la valeur de l'id à la fin de l'url
-let reponse = fetch(`http://localhost:3000/api/products/${id}`);
+let response = fetch(`http://localhost:3000/api/products/${id}`);
+console.log(response);
 
 //sélection de la classe où je vais injecter le code HTML
-const positionElements = document.querySelector(".item__img");
+const poisitionElement = document.querySelector(".item__img");
+console.log(poisitionElement);
 
 //structure HTMl pour l'affichage du produit sélectionné
-const structureProduits = ` <div class="${reponse._id}">
-<img src="${reponse.imageUrl}" alt="${reponse.altTxt}"> </div>`;
+const structureProduits = `<img src="${response.imageUrl}" alt="${response.altTxt}">`;
 
 //injecttion HTML dans la page produit
-positionElements.innerHTML = structureProduits;
+poisitionElement.innerHTML = poisitionElement;
