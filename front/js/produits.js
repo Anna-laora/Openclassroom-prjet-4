@@ -1,16 +1,26 @@
-const str = window.location; //Renvois a l'objet location qui contient des information à propros de l'emplacement courant du document
-const url = new URL(str);
-const id = url.searchParams.get("id");
-const host = "http://localhost:3000/api/products"; //constante avec url api
+//récupération de la chaîne de requête dans l'url
+const queryString_url_id = window.location.search;
+console.log(queryString_url_id);
 
-let cardsFetch = function () {
-  //fonction de la requete de api
-  fetch(host)
-    .then((reponse) => reponse.json())
-    .then((data) => {
-      console.log(data);
+// méthode pour extrair_ l'id
 
-      let img = document.querySelector(".item__img"); //variable qui se referet a la balise  dans le html
-      img.innerHTML = `<img src="${data.imageUrl}" alt="${data.altTxt}">`; // .innerHTML va mettre en place le HTML
-    });
-};
+const urlSearchParams = new URLSearchParams(queryString_url_id);
+console.log(urlSearchParams);
+
+const id = urlSearchParams.get("id");
+console.log(id);
+
+//affichage du produit (de l'objet) qui a été sélectionné par l'id
+
+//---Méthode 2 : avec fetch et en mettent la valeur de l'id à la fin de l'url
+let reponse = fetch(`http://localhost:3000/api/products/${id}`);
+
+//sélection de la classe où je vais injecter le code HTML
+const positionElements = document.querySelector(".item__img");
+
+//structure HTMl pour l'affichage du produit sélectionné
+const structureProduits = ` <div class=" ${id}>
+<img src="${id.imageUrl}" alt="${id.altTxt}"> </div>`;
+
+//injecttion HTML dans la page produit
+positionElements.innerHTML = structureProduits;
