@@ -1,0 +1,18 @@
+Ajouter un produit au panier
+ - cliquer sur le bouton ajouter au panier(il faut trouver comment savoir si on a cliqué dessus) :
+	addEventListener (fait)
+- gestion d'erreurs du panier (fait)
+   il faut un bloc à afficher en dessous de couleur et quantité avec la liste des erreurs
+   il faut que ce block ait un fond blanc pour que ce soit plus lisible
+   - s'il n'y a pas de couleur sélectionné, afficher "veuillez sélectionner une couleur" 
+   - s'il n'y a pas de quantité séléectionné, afficher "veuillez séléctionner une quantité"
+     Pour afficher les messages d'erreur, il faut créer des éléments html dans page. Quand il y a une erreur, il faut la mettre dans cette balise.
+
+ - récupération de la couleur, de l'id et de la quantité du produit
+
+- enregistrement du produit dans un tableau panier seulement s'il n'y a pas d'erreur
+ 
+ - sauvegarde le produit dans le local storage
+   - vérifier si le produit n'est pas déjà dans le panier et si c'est le cas on ajoute 1
+   - vérifier si la quantité du produit n'est pas déjà à 100, afficher un message "vous ne pouvez pas ajouter plus de 100 fois un produit"
+   - si le produit n'est pas présent on l'ajoute 

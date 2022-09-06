@@ -1,0 +1,52 @@
+- ajouter le nom du produit dans la page de détails ----fait----
+
+- une fois un produit ajouté au panier, afficher votre panier a été mis à jour
+  - un span avec un id "succes" qui a un fond blanc et une couleur verte
+- faire en sorte que le produit n'est pas rajouté si la quantité est égale à 100
+  si la quantité est de 98 et tu rajoutes 3 produits, on va jusqu'à 100
+
+  quantite = 98
+  quantiteaajouter = 3
+  si quantité < 100 alors 
+  une fois la logique écrite, le transcrire en javascript 
+
+  let quantite = 98;
+  console.log(quantite + 3);
+
+se servir de la console pour tester le programme
+une fois ok, fusionner au code existant
+
+- afficher tous les produits du panier.
+  récupération du panier : let panier = JSON.parse(localStorage.getItem("panier"));
+  parcours du panier et console.log de chaque produit : console.log(panier[i].id, panier[i].color, panier[i].quantity);
+  affichage de chaque valeur de chaque produit dans le html
+
+
+- suppression d'un produit dans le panier
+  - ajouter un événement au clique du bouton supprimer dans le panier
+  
+  faire un petit programme tout simple  qui consiste selon un id donné à supprimer un produit dans un tableau
+  let id = 2;
+  let color = "blue";
+  let panier = [];
+  let produit = {
+     id: 1
+     color: "green"
+  }
+  panier.push(produit);
+  let produit = {
+     id: 2
+     color: "blue"
+  }
+ panier.push(produit);
+  let produit = {
+     id: 2
+     color: "green"
+  }
+ panier.push(produit);
+
+-- essayer de trouver comment supprimer un élément d'un tableau selon l'id et la couleur
+
+-- récupération du panier dans le local storage
+-- intégrer au code existant
+  
